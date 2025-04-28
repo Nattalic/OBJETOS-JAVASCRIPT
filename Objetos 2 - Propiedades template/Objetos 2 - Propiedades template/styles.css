@@ -135,3 +135,20 @@ button:hover {
     display: flex;
     align-items: center;
 }
+
+/* Estilos para buscador */
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+#searchInput {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
