@@ -101,7 +101,7 @@ function agregarCarro(event) {
     
     listaCarros.push(nuevoCarro);
 
-    renderCarList();
+    renderCarList(listaCarros);
     
     form.reset();
     document.getElementById('cantidad').value = 1;
@@ -109,7 +109,7 @@ function agregarCarro(event) {
 
 function eliminarCarro(index) {
     listaCarros.splice(index, 1);
-    renderCarList();
+    renderCarList(listaCarros);
 }
 
 form.addEventListener('submit', agregarCarro);
@@ -136,9 +136,34 @@ function buscarCarro () {
     renderCarList (resultadoBuscado)
 }
 
+function ultimosDelaLista () {
+    renderCarList(listaCarros.slice(-1))
+
+}
+
 document.getElementById('searchButton').addEventListener( 
     'click', function () {
         buscarCarro()
+    }
+)
+
+document.getElementById('searchInput').addEventListener( 
+    'keypress', function (event) {
+        if (event.key === 'Enter') {
+            buscarCarro()
+        }
+    }
+)
+
+document.getElementById('searchAll').addEventListener( 
+    'click', function () {
+        renderCarList(listaCarros)
+    }
+)
+
+document.getElementById('searchUltimos').addEventListener( 
+    'click', function () {
+        ultimosDelaLista(listaCarros)
     }
 )
 
