@@ -1,4 +1,5 @@
 function Carro(marca, modelo, anio, color, cantidad) {
+
     this.marca = marca;
     this.modelo = modelo;
     this.anio = anio;
@@ -167,6 +168,7 @@ document.getElementById('searchUltimos').addEventListener(
     }
 )
 
+console.log(listaCarros [0] instanceof(Carro)) 
 
 renderCarList(listaCarros)
 
