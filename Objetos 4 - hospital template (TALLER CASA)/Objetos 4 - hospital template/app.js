@@ -1,15 +1,46 @@
 // Falta Constructor para Doctores
 function Doctor(id, nombre, especialidad) {
+    this.id = id
+    this.nombre = nombre
+    this.especialidad = especialidad
 
+    this.getInfo = function() {h
+        return `${this.nombre} (${this.especialidad})`
+    }
+    
 }
 
 // Falta Constructor para Pacientes
 function Paciente(id, nombre, edad, telefono) {
+    this.id = id
+    this.nombre = nombre
+    this.edad = edad
+    this.telefono = telefono
 
+    this.getInfo = function() {
+        return `${this.nombre} ${this.edad} años`;
+    }
 }
 
 // Falta Constructor para Citas
 function Cita(id, pacienteId, doctorId, fecha, motivo) {
+    this.id = id
+    this.pacienteId = pacienteId
+    this.doctorId = doctorId
+    this.fecha = new  Date (fecha) //no se como se hace esto
+    this.motivo = motivo
+    this.estado = 'Programada'
+
+
+    this.cancelar = function () {
+        this.estado = "Cancelada"
+    }
+
+//ni esto
+    this.cambiarFecha = function (nuevaFecha) {
+        this.fecha = new Date(nuevaFecha)
+        this.estado = "Reprogramada"
+    }
 
 }
 
